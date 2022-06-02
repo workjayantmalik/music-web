@@ -47,7 +47,7 @@ const ContactPage: NextPage<IContactPageProps> = () => {
             {/* END Heading */}
             {/* Contact Form */}
             <div className="flex items-center lg:px-14 xl:px-20">
-              <form onsubmit="return false;" className="space-y-6 w-full" _lpchecked={1}>
+              <form className="space-y-6 w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-1">
                     <label htmlFor="tk-contact-firstname" className="font-medium">
