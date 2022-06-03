@@ -2,9 +2,11 @@ import React from 'react';
 import { RoutesDict } from '~lib/RoutesDict';
 import NextLink from 'next/link';
 
-interface IPublicHeaderProps {}
+interface IPublicHeaderProps {
+  isAuthenticated?:boolean
+}
 
-export const PublicHeader: React.FC<IPublicHeaderProps> = () => {
+export const PublicHeader: React.FC<IPublicHeaderProps> = ({isAuthenticated = false}) => {
   return (
     <header id="page-header" className="flex flex-none items-center bg-white py-10">
       <div className="flex flex-col text-center md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0 container xl:max-w-7xl mx-auto px-4 lg:px-10">
@@ -66,22 +68,42 @@ export const PublicHeader: React.FC<IPublicHeaderProps> = () => {
                 <span>Sign In</span>
               </a>
             </NextLink>
-            <NextLink href={RoutesDict.auth.signup}>
-              <a className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-5 text-sm rounded border-gray-300 bg-white text-gray-800 shadow-sm hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 hover:shadow focus:ring focus:ring-gray-500 focus:ring-opacity-25 active:bg-white active:border-white active:shadow-none">
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-50 hi-solid hi-plus inline-block w-5 h-5">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>New Account</span>
-              </a>
-            </NextLink>
+            {isAuthenticated ? (
+               <NextLink href={RoutesDict.portal.dashboard}>
+               <a className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-5 text-sm rounded border-gray-300 bg-white text-gray-800 shadow-sm hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 hover:shadow focus:ring focus:ring-gray-500 focus:ring-opacity-25 active:bg-white active:border-white active:shadow-none">
+                 <svg
+                   fill="currentColor"
+                   viewBox="0 0 20 20"
+                   xmlns="http://www.w3.org/2000/svg"
+                   className="opacity-50 hi-solid hi-plus inline-block w-5 h-5">
+                   <path
+                     fillRule="evenodd"
+                     d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                     clipRule="evenodd"
+                   />
+                 </svg>
+                 <span>Dashboard</span>
+               </a>
+             </NextLink>
+            ): (
+ <NextLink href={RoutesDict.auth.signup}>
+ <a className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-5 text-sm rounded border-gray-300 bg-white text-gray-800 shadow-sm hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 hover:shadow focus:ring focus:ring-gray-500 focus:ring-opacity-25 active:bg-white active:border-white active:shadow-none">
+   <svg
+     fill="currentColor"
+     viewBox="0 0 20 20"
+     xmlns="http://www.w3.org/2000/svg"
+     className="opacity-50 hi-solid hi-plus inline-block w-5 h-5">
+     <path
+       fillRule="evenodd"
+       d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+       clipRule="evenodd"
+     />
+   </svg>
+   <span>New Account</span>
+ </a>
+</NextLink>
+            )}
+           
           </div>
           {/* END Actions */}
         </div>

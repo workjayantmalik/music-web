@@ -3,6 +3,7 @@ import { Input } from '~upload/Input';
 import { DashboardContainer } from '~containers';
 import { useState } from 'react';
 import { IconUser } from '~icons/IconUser';
+import { UploadForm } from '~upload/UploadForm';
 
 interface IUploadPageProps {}
 
@@ -15,15 +16,7 @@ const UploadPage: NextPage<IUploadPageProps> = () => {
   return (
     <DashboardContainer>
       <form className="space-y-6">
-        <Input
-          icon={IconUser}
-          label="Title"
-          required
-          placeholder="Bum Bum Bhole"
-          value={state.title}
-          validate={titleValidator}
-          onInput={title => setState({ ...state, title: title })}
-        />
+        <UploadForm />
       </form>
     </DashboardContainer>
   );

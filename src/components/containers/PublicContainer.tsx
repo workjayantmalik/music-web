@@ -9,7 +9,7 @@ interface IPublicContainerProps {
 export const PublicContainer: React.FC<IPublicContainerProps> = ({ children }) => {
   return (
     <main className="bg-white overflow-hidden">
-      <PublicHeader />
+      <PublicHeader isAuthenticated />
 
       {children}
 
