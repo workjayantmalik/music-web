@@ -23,7 +23,8 @@
       "~common/*": ["src/components/common/*"],
       "~lib/*": ["src/lib/*"],
       "~icons/*": ["src/components/icons/*"],
-      "~upload/*": ["src/components/upload/*"]
+      "~upload/*": ["src/components/upload/*"],
+      "~reports/*": ["src/components/reports/*"]
     }
   },
   "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/**/*.tsx"],
