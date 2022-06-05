@@ -82,9 +82,6 @@ export const DashboardContainer: React.FC<IDashboardContainerProps> = ({ childre
                       </svg>
                     </span>
                     <span className="py-2 grow">Dashboard</span>
-                    <span className="px-2 py-1 rounded-full text-xs font-medium leading-4 bg-opacity-10 text-gray-600 bg-gray-500">
-                      3
-                    </span>
                   </a>
                 </NextLink>
                 <div className="px-3 pt-5 pb-2 text-xs font-medium uppercase tracking-wider text-gray-500">
@@ -108,9 +105,6 @@ export const DashboardContainer: React.FC<IDashboardContainerProps> = ({ childre
                       </svg>
                     </span>
                     <span className="py-2 grow">Flash Reports</span>
-                    <span className="px-2 py-1 rounded-full text-xs font-medium leading-4 bg-opacity-10 text-gray-600 bg-gray-500">
-                      99+
-                    </span>
                   </a>
                 </NextLink>
 
@@ -134,50 +128,6 @@ export const DashboardContainer: React.FC<IDashboardContainerProps> = ({ childre
                     <span className="py-2 grow">New Upload</span>
                   </a>
                 </NextLink>
-
-                <a
-                  href="#"
-                  className="flex items-center space-x-3 px-3 font-medium rounded text-gray-600 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-50">
-                  <span className="flex-none flex items-center opacity-50">
-                    <svg
-                      className="hi-outline hi-users inline-block w-5 h-5"
-                      stroke="currentColor"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    </svg>
-                  </span>
-                  <span className="py-2 grow">Tunes</span>
-                  <span className="px-2 py-1 rounded-full text-xs font-medium leading-4 bg-opacity-10 text-gray-600 bg-gray-500">
-                    26
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center space-x-3 px-3 font-medium rounded text-gray-600 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-50">
-                  <span className="flex-none flex items-center opacity-50">
-                    <svg
-                      className="hi-outline hi-users inline-block w-5 h-5"
-                      stroke="currentColor"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    </svg>
-                  </span>
-                  <span className="py-2 grow">Downloads</span>
-                </a>
 
                 <div className="px-3 pt-5 pb-2 text-xs font-medium uppercase tracking-wider text-gray-500">Account</div>
                 <a

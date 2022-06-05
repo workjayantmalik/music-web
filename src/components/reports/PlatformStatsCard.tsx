@@ -1,6 +1,7 @@
 import { ArcElement, Chart as ChartJS, ChartOptions, Legend, Tooltip } from 'chart.js';
-import React from 'react';
+import React, { useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import { PlatformStatsFilterModal } from '~reports/PlatformStatsFilterModal';
 
 interface IPlatformStatsCardProps {}
 
@@ -46,6 +47,8 @@ export const data = {
 };
 
 export const PlatformStatsCard: React.FC<IPlatformStatsCardProps> = () => {
+  const [showPlatformModal, setShowPlatformModel] = useState(false);
+
   return (
     <section className="flex flex-col rounded shadow-sm bg-white overflow-hidden mb-5">
       {/* Card Header */}
@@ -71,8 +74,8 @@ export const PlatformStatsCard: React.FC<IPlatformStatsCardProps> = () => {
             </svg>
             <span>Download</span>
           </a>
-          <a
-            href="#"
+          <button
+            onClick={() => setShowPlatformModel(true)}
             className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-5 text-sm rounded border-gray-300 bg-white text-gray-800 shadow-sm hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 hover:shadow focus:ring focus:ring-gray-500 focus:ring-opacity-25 active:bg-white active:border-white active:shadow-none">
             <svg
               fill="currentColor"
@@ -82,7 +85,12 @@ export const PlatformStatsCard: React.FC<IPlatformStatsCardProps> = () => {
               <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>
             <span>Filter</span>
-          </a>
+          </button>
+          <PlatformStatsFilterModal
+            onSuccess={() => setShowPlatformModel(false)}
+            onCancel={() => setShowPlatformModel(false)}
+            isVisible={showPlatformModal}
+          />
         </div>
       </div>
       {/* END Card Header */}
