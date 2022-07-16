@@ -3,6 +3,7 @@ import { PublicContainer } from '~containers';
 import { DistributionPlatformsSection } from '~welcome/DistributionPlatformsSection';
 import { FeaturesSection } from '~welcome/FeaturesSection';
 import { Hero } from '~welcome/Hero';
+import { RecentPosts } from '~welcome/RecentPosts';
 
 interface IHomePageProps {}
 
@@ -14,6 +15,7 @@ const HomePage: NextPage<IHomePageProps> = () => {
         <div className="space-y-16">
           <DistributionPlatformsSection />
           <FeaturesSection />
+          <RecentPosts />
         </div>
       </div>
     </PublicContainer>
